@@ -73,24 +73,15 @@ header {
     flex-direction: column;
 }
 
-.card-content input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Container for multiple buttons in a row */
-.button-group, .card-links {
+.card-links {
     display: flex;
+    flex-direction: column;
     gap: 10px;
-    margin-top: 15px;
+    margin-top: auto;
 }
 
 .btn {
-    display: inline-block;
+    display: block;
     background: var(--primary);
     color: white;
     padding: 10px 20px;
@@ -101,13 +92,8 @@ header {
     font-size: 14px;
     text-align: center;
     transition: background 0.2s;
-    /* This prevents the button from stretching vertically */
-    align-self: flex-start; 
-}
-
-/* Allow buttons to grow only when they are inside a group */
-.button-group .btn, .card-links .btn {
-    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .btn:hover {
@@ -137,5 +123,4 @@ footer {
 @media (max-width: 768px) {
     .info-grid { grid-template-columns: 1fr; }
     .project-card { flex: 0 0 280px; }
-    .button-group, .card-links { flex-direction: column; } 
 }
