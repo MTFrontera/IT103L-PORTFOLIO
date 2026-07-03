@@ -1,0 +1,9 @@
+# Ignore certificate assets and temporary files
+/to be arranged/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Node / development
+node_modules/
