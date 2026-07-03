@@ -5,23 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mark Tristan Fronteras | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">MT</div>
+            <ul class="nav-menu">
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="btn-icon" title="Toggle Dark Mode"><i class="fas fa-moon"></i></button>
+                <button id="wallpaper-toggle" class="btn-icon" title="Change Wallpaper"><i class="fas fa-image"></i></button>
+            </div>
+        </div>
+    </nav>
+
     <header>
         <div class="header-content">
             <img src="profile.jpg" alt="Profile Picture" id="profile-img">
             <h1 id="name">Mark Tristan B. Fronteras</h1>
             <p id="course-year">Bachelor of Science in Information Systems - 2nd Year</p>
-            <div class="controls">
-                <button id="theme-toggle">Switch Theme</button>
-                <button id="wallpaper-toggle">Change Wallpaper</button>
+            <p class="tagline">Full Stack Developer | Creative Problem Solver</p>
+            <div class="social-links">
+                <a href="https://github.com/MTFrontera" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </header>
 
     <main class="container">
-        <section id="projects">
-            <h2>Current Projects</h2>
+        <section id="projects" class="section">
+            <h2 class="section-title">Current Projects</h2>
             <div class="project-grid">
 
                 <div class="project-card">
@@ -60,6 +79,24 @@
                 </div>
 
                 <div class="project-card">
+                    <h3>Handyra</h3>
+                    <p>Handyra is a mobile service marketplace that connects users with trusted local service providers through location-based search, secure booking, provider verification, and user ratings. Role: Researcher.</p>
+                    <div class="card-links">
+                        <a href="https://handyra1.vercel.app/" target="_blank" rel="noopener" class="btn">View Website</a>
+                        <a href="https://github.com/YancyCuyos/handyra" target="_blank" rel="noopener" class="btn">View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>EduGuide</h3>
+                    <p>EduGuide is an AI education guide for students, providing timely learning support, course recommendations, and student-centered guidance.</p>
+                    <div class="card-links">
+                        <a href="https://edu-guide-ph.vercel.app/" target="_blank" rel="noopener" class="btn">View Website</a>
+                        <a href="https://github.com/MTFrontera/edu-guide-ph" target="_blank" rel="noopener" class="btn">View Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
                     <h3>Tindahan Tracker</h3>
                     <p>Creator - Computer Programming Concepts 1</p>
                 </div>
@@ -67,28 +104,105 @@
             </div>
         </section>
 
-        <div class="info-grid">
-            <section id="education">
-                <h2>Educational Background</h2>
-                <ul>
-                    <li><strong>College (Current):</strong> Mapúa Malayan Colleges Mindanao (2024-Present)</li>
-                    <li><strong>Senior High School:</strong> Davao Doctors College Inc. (2022-2024)</li>
-                    <li><strong>Junior High School:</strong> Daniel R. Aguinaldo High School (2018-2022)</li>
-                    <li><strong>Middle School:</strong> International Christian School of Davao (2015-2018)</li>
-                </ul>
-            </section>
+        <section id="github-repos" class="section">
+            <h2 class="section-title">GitHub Repositories</h2>
+            <div id="repos-container" class="repos-grid">
+                <p id="repos-message" style="text-align: center; color: #666; padding: 20px;">Loading repositories...</p>
+            </div>
+        </section>
 
-            <section id="achievements">
-                <h2>Achievements</h2>
-                <ul>
-                    <li>Survived debugging for 5 hours straight</li>
-                </ul>
-            </section>
-        </div>
+        <section id="skills" class="section">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">APIs</span>
+                        <span class="skill-tag">Databases</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Vercel</span>
+                        <span class="skill-tag">Figma</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <h2 class="section-title">Educational Background</h2>
+            <ul>
+                <li><strong>College (Current):</strong> Mapúa Malayan Colleges Mindanao (2024-Present)</li>
+                <li><strong>Senior High School:</strong> Davao Doctors College Inc. (2022-2024)</li>
+                <li><strong>Junior High School:</strong> Daniel R. Aguinaldo High School (2018-2022)</li>
+                <li><strong>Middle School:</strong> International Christian School of Davao (2015-2018)</li>
+            </ul>
+        </section>
+
+        <section id="achievements" class="section">
+            <h2 class="section-title">Achievements & Certifications</h2>
+            <ul>
+                <li><span class="achievement-icon">🏆</span> Survived debugging for 5 hours straight</li>
+                <li><span class="achievement-icon">⭐</span> Completed multiple responsive web projects</li>
+                <li><span class="achievement-icon">🚀</span> Published live web applications on Vercel</li>
+            </ul>
+
+            <!-- Certificate Tabs -->
+            <div id="cert-tabs" class="cert-tabs">
+                <button class="cert-tab-btn active" data-tab="all">All Certificates</button>
+                <button class="cert-tab-btn" data-tab="coursera">Coursera</button>
+                <button class="cert-tab-btn" data-tab="codechum">Codechum</button>
+                <button class="cert-tab-btn" data-tab="aws">AWS</button>
+            </div>
+
+            <div id="certificates-container" class="certificates-section">
+                <p id="certificates-message">📜 Loading certificates...</p>
+                <div id="certificates-gallery" class="gallery"></div>
+                
+                <!-- Lightbox -->
+                <div id="lightbox" class="lightbox" aria-hidden="true">
+                    <div class="lightbox-inner">
+                        <button id="lightbox-close" class="lightbox-close" aria-label="Close">×</button>
+                        <img id="lightbox-img" src="" alt="" />
+                        <div id="lightbox-caption" class="lightbox-caption"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact-section">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> your.email@example.com</p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/MTFrontera" target="_blank">MTFrontera</a></p>
+                    <p><strong>Location:</strong> Davao City, Philippines</p>
+                </div>
+                <div class="contact-message">
+                    <p>I'm always interested in new projects and opportunities. Feel free to reach out!</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Mark Tristan B. Fronteras</p>
+        <p>&copy; 2026 Mark Tristan B. Fronteras | Built with <span style="color: #e74c3c;">❤</span> and Code</p>
     </footer>
 
     <script src="script.js"></script>
