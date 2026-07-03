@@ -1,7 +1,3 @@
-# Ignore certificate assets and temporary files
-/to be arranged/*
-!/to be arranged/manifest.json
-
 # Ignore system files
 .DS_Store
 Thumbs.db

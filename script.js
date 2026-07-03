@@ -91,9 +91,13 @@ document.querySelectorAll('.section, .project-card').forEach(el => {
 });
 
 /* Certificates Gallery Loader */
+function encodePath(filePath) {
+  return filePath.split('/').map(encodeURIComponent).join('/');
+}
+
 function loadCertificatesGallery() {
   const folderName = "to be arranged";
-  const manifestPath = encodeURI(`${folderName}/manifest.json`);
+  const manifestPath = `${folderName}/manifest.json`;
   const gallery = document.getElementById('certificates-gallery');
   const message = document.getElementById('certificates-message');
   const lightbox = document.getElementById('lightbox');
@@ -106,7 +110,7 @@ function loadCertificatesGallery() {
 
   let allCerts = [];
 
-  fetch(manifestPath)
+  fetch(encodePath(manifestPath))
     .then(res => {
       if (!res.ok) throw new Error('Manifest not found');
       return res.json();
@@ -203,11 +207,11 @@ function loadCertificatesGallery() {
       }
 
       card.addEventListener('click', () => {
+        const encodedSrc = encodePath(item.fileSrc);
         if (item.isPDF) {
-          window.open(encodeURI(item.fileSrc), '_blank');
+          window.open(encodedSrc, '_blank');
         } else {
-          lightboxImg.src = encodeURI(item.fileSrc);
-          lightboxCaption.textContent = `${item.title || ''} — ${item.issuer || ''}`;
+          lightboxImg.src = encodedSrc;
           lightbox.style.display = 'block';
           lightbox.setAttribute('aria-hidden', 'false');
         }
