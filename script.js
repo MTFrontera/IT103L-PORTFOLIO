@@ -208,13 +208,31 @@ function loadCertificatesGallery() {
 
       card.addEventListener('click', () => {
         const encodedSrc = encodePath(item.fileSrc);
+        const lightboxFrame = document.getElementById('lightbox-frame');
+
         if (item.isPDF) {
-          window.open(encodedSrc, '_blank');
+          if (lightboxFrame) {
+            lightboxFrame.src = encodedSrc;
+            lightboxFrame.style.display = 'block';
+          }
+          if (lightboxImg) {
+            lightboxImg.style.display = 'none';
+            lightboxImg.src = '';
+          }
         } else {
-          lightboxImg.src = encodedSrc;
-          lightbox.style.display = 'block';
-          lightbox.setAttribute('aria-hidden', 'false');
+          if (lightboxImg) {
+            lightboxImg.src = encodedSrc;
+            lightboxImg.style.display = 'block';
+          }
+          if (lightboxFrame) {
+            lightboxFrame.style.display = 'none';
+            lightboxFrame.src = '';
+          }
         }
+
+        lightboxCaption.textContent = `${item.title || ''} — ${item.issuer || ''}`;
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
       });
 
       gallery.appendChild(card);
@@ -226,6 +244,10 @@ function loadCertificatesGallery() {
       lightbox.style.display = 'none';
       lightbox.setAttribute('aria-hidden', 'true');
       if (lightboxImg) lightboxImg.src = '';
+      const lightboxFrame = document.getElementById('lightbox-frame');
+      if (lightboxFrame) {
+        lightboxFrame.src = '';
+      }
     });
   }
 
